@@ -10,8 +10,16 @@ import UIKit
 
 class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 	
+	let duration = 1.0
+	
+	// presenting or dismissing
+	var presenting = true
+	
+	// original frame rect of the image the user taps
+	var originImageFrame = CGRect.zero
+	
 	func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-		return 0
+		return duration
 	}
 	
 	func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
