@@ -37,4 +37,13 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 		self.collectionView?.collectionViewLayout = layout
 		self.collectionView?.register(UINib(nibName: servantDataSource.nibName, bundle: Bundle.main) , forCellWithReuseIdentifier: servantDataSource.cellIdentifier)
 	}
+	
+	// user tapped the item in collection view
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		
+	}
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+	
 }

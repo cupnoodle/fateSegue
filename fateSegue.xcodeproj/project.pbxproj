@@ -16,6 +16,7 @@
 		06FDC0B51EBF833100EC6F14 /* Servants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FDC0B41EBF833100EC6F14 /* Servants.swift */; };
 		06FDC0B71EBF868E00EC6F14 /* ServantCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FDC0B61EBF868E00EC6F14 /* ServantCollectionViewDataSource.swift */; };
 		06FDC0B81EBF8D1700EC6F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06FDC0A21EBF7DD600EC6F14 /* Assets.xcassets */; };
+		B36BD8091EC05F4800080A97 /* TranslationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36BD8081EC05F4800080A97 /* TranslationAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		06FDC0AF1EBF803C00EC6F14 /* ServantCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServantCollectionViewCell.xib; sourceTree = "<group>"; };
 		06FDC0B41EBF833100EC6F14 /* Servants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Servants.swift; sourceTree = "<group>"; };
 		06FDC0B61EBF868E00EC6F14 /* ServantCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServantCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		B36BD8081EC05F4800080A97 /* TranslationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		06FDC09A1EBF7DD600EC6F14 /* fateSegue */ = {
 			isa = PBXGroup;
 			children = (
+				B36BD8071EC05E6F00080A97 /* Animator */,
 				06FDC0AD1EBF801700EC6F14 /* Servant */,
 				06FDC09B1EBF7DD600EC6F14 /* AppDelegate.swift */,
 				06FDC09D1EBF7DD600EC6F14 /* ViewController.swift */,
@@ -82,6 +85,14 @@
 				06FDC0B61EBF868E00EC6F14 /* ServantCollectionViewDataSource.swift */,
 			);
 			name = Servant;
+			sourceTree = "<group>";
+		};
+		B36BD8071EC05E6F00080A97 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				B36BD8081EC05F4800080A97 /* TranslationAnimator.swift */,
+			);
+			name = Animator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			files = (
 				06FDC09E1EBF7DD600EC6F14 /* ViewController.swift in Sources */,
 				06FDC0B01EBF803C00EC6F14 /* ServantCollectionViewCell.swift in Sources */,
+				B36BD8091EC05F4800080A97 /* TranslationAnimator.swift in Sources */,
 				06FDC09C1EBF7DD600EC6F14 /* AppDelegate.swift in Sources */,
 				06FDC0B71EBF868E00EC6F14 /* ServantCollectionViewDataSource.swift in Sources */,
 				06FDC0B51EBF833100EC6F14 /* Servants.swift in Sources */,
@@ -287,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HZA79NQ8N6;
 				INFOPLIST_FILE = fateSegue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sweatshops.fateSegue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +313,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HZA79NQ8N6;
 				INFOPLIST_FILE = fateSegue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sweatshops.fateSegue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
