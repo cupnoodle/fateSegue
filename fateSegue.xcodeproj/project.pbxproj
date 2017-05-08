@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		066D2C481EC0AF3200C172FE /* ServantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D2C471EC0AF3200C172FE /* ServantDetailViewController.swift */; };
 		06FDC09C1EBF7DD600EC6F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FDC09B1EBF7DD600EC6F14 /* AppDelegate.swift */; };
 		06FDC09E1EBF7DD600EC6F14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FDC09D1EBF7DD600EC6F14 /* ViewController.swift */; };
 		06FDC0A11EBF7DD600EC6F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FDC09F1EBF7DD600EC6F14 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		066D2C471EC0AF3200C172FE /* ServantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServantDetailViewController.swift; sourceTree = "<group>"; };
 		06FDC0981EBF7DD600EC6F14 /* fateSegue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fateSegue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FDC09B1EBF7DD600EC6F14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06FDC09D1EBF7DD600EC6F14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				06FDC0A21EBF7DD600EC6F14 /* Assets.xcassets */,
 				06FDC0A41EBF7DD600EC6F14 /* LaunchScreen.storyboard */,
 				06FDC0A71EBF7DD600EC6F14 /* Info.plist */,
+				066D2C471EC0AF3200C172FE /* ServantDetailViewController.swift */,
 			);
 			path = fateSegue;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				06FDC09E1EBF7DD600EC6F14 /* ViewController.swift in Sources */,
 				06FDC0B01EBF803C00EC6F14 /* ServantCollectionViewCell.swift in Sources */,
+				066D2C481EC0AF3200C172FE /* ServantDetailViewController.swift in Sources */,
 				B36BD8091EC05F4800080A97 /* TranslationAnimator.swift in Sources */,
 				06FDC09C1EBF7DD600EC6F14 /* AppDelegate.swift in Sources */,
 				06FDC0B71EBF868E00EC6F14 /* ServantCollectionViewDataSource.swift in Sources */,

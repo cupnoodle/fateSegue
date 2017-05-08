@@ -40,7 +40,15 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 	
 	// user tapped the item in collection view
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
+		print("did select item")
+		presentServantDetail(indexPath)
+	}
+	
+	func presentServantDetail(_ indexPath: IndexPath){
+		let servantDetails = storyboard!.instantiateViewController(withIdentifier: "ServantDetailViewController") as! ServantDetailViewController
+		servantDetails.servantIndexPath = indexPath
+		print("item is \(indexPath.item)")
+		present(servantDetails, animated: true, completion: nil)
 	}
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-0l-SBF">
-                                <rect key="frame" x="0.0" y="220" width="375" height="447"/>
+                                <rect key="frame" x="0.0" y="220" width="320" height="348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H8T-B3-3bs">
                                     <size key="itemSize" width="50" height="50"/>
@@ -48,6 +48,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="37.331334332833585"/>
+        </scene>
+        <!--Servant Detail View Controller-->
+        <scene sceneID="3Vz-Ge-Uhw">
+            <objects>
+                <viewController storyboardIdentifier="ServantDetailViewController" id="WQJ-He-KzX" customClass="ServantDetailViewController" customModule="fateSegue" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gzv-my-imY"/>
+                        <viewControllerLayoutGuide type="bottom" id="NSG-NC-tVR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZC4-G6-bWl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLP-ZY-0vf">
+                                <rect key="frame" x="60" y="60" width="200" height="282"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="1ZW-XY-lEp"/>
+                                    <constraint firstAttribute="width" constant="200" id="Czb-eS-wq8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2p-70-ZvO">
+                                <rect key="frame" x="60" y="350" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="wxg-no-8IR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u2p-70-ZvO" firstAttribute="top" secondItem="fLP-ZY-0vf" secondAttribute="bottom" constant="8" id="77O-dI-qzp"/>
+                            <constraint firstItem="fLP-ZY-0vf" firstAttribute="top" secondItem="gzv-my-imY" secondAttribute="bottom" constant="40" id="Bok-AV-BK5"/>
+                            <constraint firstItem="u2p-70-ZvO" firstAttribute="centerX" secondItem="ZC4-G6-bWl" secondAttribute="centerX" id="Nng-qp-hku"/>
+                            <constraint firstItem="fLP-ZY-0vf" firstAttribute="centerX" secondItem="ZC4-G6-bWl" secondAttribute="centerX" id="gbc-EG-QB0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="servantImage" destination="fLP-ZY-0vf" id="QiV-Fp-E26"/>
+                        <outlet property="servantLabel" destination="u2p-70-ZvO" id="1Lf-Tc-Z5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tQ-y5-veZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.875" y="36.971830985915496"/>
         </scene>
     </scenes>
 </document>
