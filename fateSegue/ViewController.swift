@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate {
 	@IBOutlet weak var collectionView: UICollectionView!
 	
+	let transition = TranslationAnimator()
 	let servantDataSource = ServantCollectionViewDataSource()
 	
 	override func viewDidLoad() {
@@ -47,11 +48,18 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 	func presentServantDetail(_ indexPath: IndexPath){
 		let servantDetails = storyboard!.instantiateViewController(withIdentifier: "ServantDetailViewController") as! ServantDetailViewController
 		servantDetails.servantIndexPath = indexPath
-		print("item is \(indexPath.item)")
+		
+		servantDetails.transitioningDelegate = self
 		present(servantDetails, animated: true, completion: nil)
 	}
 }
 
 extension ViewController: UIViewControllerTransitioningDelegate {
+	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return transition
+	}
 	
+	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return nil
+	}
 }
