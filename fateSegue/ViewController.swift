@@ -13,6 +13,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 	
 	let transition = TranslationAnimator()
 	let servantDataSource = ServantCollectionViewDataSource()
+	var selectedImageFrame = CGRect.zero
+	var selectedImage : UIImage = UIImage()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,7 +43,10 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 	
 	// user tapped the item in collection view
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("did select item")
+		let selectedServantCell = self.collectionView?.cellForItem(at: indexPath) as! ServantCollectionViewCell
+		selectedImageFrame = self.view.convert(selectedServantCell.servantImageView.frame, from: selectedServantCell)
+		selectedImage = selectedServantCell.servantImageView.image!
+		
 		presentServantDetail(indexPath)
 	}
 	
@@ -56,6 +61,13 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 
 extension ViewController: UIViewControllerTransitioningDelegate {
 	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		
+		transition.presentingView = presenting.view
+		transition.originImageFrame = selectedImageFrame
+		transition.endImageFrame = (presented as! ServantDetailViewController).servantImage.frame
+		transition.presenting = true
+		transition.image = selectedImage
+		
 		return transition
 	}
 	
