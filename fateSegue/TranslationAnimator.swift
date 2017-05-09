@@ -50,11 +50,20 @@ class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 		if presenting{
 			let tmpImageView = UIImageView(frame: originImageFrame)
 			tmpImageView.image = image
-			toView.addSubview(tmpImageView)
-			toView.alpha = 1.0
 			
-			containerView.addSubview(toView)
-			fromView.alpha = 0.0
+			containerView.addSubview(tmpImageView)
+			containerView.backgroundColor = UIColor.white
+			
+			UIView.animate(
+				withDuration: duration,
+				animations: {
+					fromView.alpha = 0.0
+					tmpImageView.frame = self.endImageFrame
+			}, completion: { _ in
+				containerView.addSubview(toView)
+				transitionContext.completeTransition(true)
+			})
+
 		}
 		
 
