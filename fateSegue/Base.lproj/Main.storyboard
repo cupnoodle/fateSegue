@@ -69,8 +69,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2p-70-ZvO">
-                                <rect key="frame" x="60" y="350" width="200" height="21"/>
+                                <rect key="frame" x="60" y="350" width="200" height="22"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="jDH-XT-RNV"/>
                                     <constraint firstAttribute="width" constant="200" id="wxg-no-8IR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -80,9 +81,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u2p-70-ZvO" firstAttribute="top" secondItem="fLP-ZY-0vf" secondAttribute="bottom" constant="8" id="77O-dI-qzp"/>
                             <constraint firstItem="fLP-ZY-0vf" firstAttribute="top" secondItem="gzv-my-imY" secondAttribute="bottom" constant="40" id="Bok-AV-BK5"/>
                             <constraint firstItem="u2p-70-ZvO" firstAttribute="centerX" secondItem="ZC4-G6-bWl" secondAttribute="centerX" id="Nng-qp-hku"/>
+                            <constraint firstItem="u2p-70-ZvO" firstAttribute="top" secondItem="gzv-my-imY" secondAttribute="bottom" constant="330" id="ce6-bf-0Pc"/>
                             <constraint firstItem="fLP-ZY-0vf" firstAttribute="centerX" secondItem="ZC4-G6-bWl" secondAttribute="centerX" id="gbc-EG-QB0"/>
                         </constraints>
                     </view>

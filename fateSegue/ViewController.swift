@@ -14,7 +14,10 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 	let transition = TranslationAnimator()
 	let servantDataSource = ServantCollectionViewDataSource()
 	var selectedImageFrame = CGRect.zero
+	var selectedImageView : UIImageView = UIImageView()
 	var selectedImage : UIImage = UIImage()
+	var selectedLabelFrame = CGRect.zero
+	var selectedLabel : UILabel = UILabel()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -46,6 +49,10 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 		let selectedServantCell = self.collectionView?.cellForItem(at: indexPath) as! ServantCollectionViewCell
 		selectedImageFrame = self.view.convert(selectedServantCell.servantImageView.frame, from: selectedServantCell)
 		selectedImage = selectedServantCell.servantImageView.image!
+		selectedImageView = selectedServantCell.servantImageView
+		
+		selectedLabelFrame = self.view.convert(selectedServantCell.servantNameLabel.frame, from: selectedServantCell)
+		selectedLabel = selectedServantCell.servantNameLabel
 		
 		presentServantDetail(indexPath)
 	}
@@ -68,6 +75,12 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 		transition.presenting = true
 		transition.image = selectedImage
 		
+		transition.originLabelFrame = selectedLabelFrame
+		transition.endLabelFrame = (presented as! ServantDetailViewController).servantLabel.frame
+		transition.label = selectedLabel
+		
+		selectedImageView.alpha = 0.0
+		selectedLabel.alpha = 0.0
 		return transition
 	}
 	
