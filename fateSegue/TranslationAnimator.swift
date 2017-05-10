@@ -10,7 +10,7 @@ import UIKit
 
 class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 	
-	let duration = 1.0
+	let duration = 0.8
 	
 	// presenting or dismissing
 	var presenting = true
@@ -37,19 +37,7 @@ class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 		let toView = transitionContext.view(forKey: .to)!
 		let fromView = transitionContext.view(forKey: .from)!
 		
-		let initialFrame = presenting ? originImageFrame : endImageFrame
-		let finalFrame = presenting ? endImageFrame : originImageFrame
-		
-		let xScaleFactor = presenting ?
-			initialFrame.width / finalFrame.width :
-			finalFrame.width / initialFrame.width
-		
-		let yScaleFactor = presenting ?
-			initialFrame.height / finalFrame.height :
-			finalFrame.height / initialFrame.height
-		
-		let scaleTransform = CGAffineTransform(scaleX: xScaleFactor,
-		                                       y: yScaleFactor)
+		let toViewController = transitionContext.viewController(forKey: .to)!
 		
 		if presenting{
 			let tmpImageView = UIImageView(frame: originImageFrame)
@@ -72,12 +60,14 @@ class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 			tmpLabelView.transform = CGAffineTransform(scaleX: 14.0 / newSize, y: 14.0 / newSize)
 			tmpLabelView.sizeToFit()
 			
+			fromView.alpha = 1.0
+			
 			UIView.animate(
 				withDuration: duration,
 				animations: {
 					fromView.alpha = 0.0
 					tmpImageView.frame = self.endImageFrame
-					tmpLabelView.frame.origin.y = 353
+					tmpLabelView.frame.origin.y = self.endLabelFrame.origin.y + 3
 					tmpLabelView.center.x = self.endLabelFrame.midX
 					tmpLabelView.transform = CGAffineTransform(scaleX: newSize / 14.0, y: newSize / 14.0)
 					
@@ -89,9 +79,64 @@ class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 				
 				
 				containerView.addSubview(toView)
+				
+				// restore view controller view alpha to 1.0 after animation
+				fromView.alpha = 1.0
+				tmpImageView.removeFromSuperview()
+				tmpLabelView.removeFromSuperview()
 				transitionContext.completeTransition(true)
 			})
 
+		} else {
+			
+			let tmpImageView = UIImageView(frame: originImageFrame)
+			tmpImageView.image = image
+			tmpImageView.alpha = 1.0
+			
+			let tmpLabelView = UILabel(frame: originLabelFrame)
+			tmpLabelView.font = UIFont.systemFont(ofSize: 17.0)
+			tmpLabelView.textColor = label.textColor
+			tmpLabelView.text = label.text
+			tmpLabelView.textAlignment = label.textAlignment
+			
+			let newSize : CGFloat = 15.5
+			
+			containerView.addSubview(tmpImageView)
+			containerView.addSubview(tmpLabelView)
+			
+			containerView.backgroundColor = UIColor.white
+			
+			fromView.alpha = 1.0
+			
+			tmpLabelView.font = UIFont.systemFont(ofSize: newSize)
+			tmpLabelView.transform = CGAffineTransform(scaleX: 17.0 / newSize, y: 17.0 / newSize)
+			tmpLabelView.sizeToFit()
+			
+			toView.alpha = 0.0
+			containerView.insertSubview(toView, belowSubview: tmpImageView)
+			
+			UIView.animate(
+				withDuration: duration,
+				animations: {
+					toView.alpha = 1.0
+					fromView.alpha = 0.0
+					tmpImageView.frame = self.endImageFrame
+					tmpLabelView.frame.origin.y = self.endLabelFrame.origin.y - 2
+					tmpLabelView.center.x = self.endLabelFrame.midX
+					tmpLabelView.transform = CGAffineTransform(scaleX: newSize / 17.0, y: newSize / 17.0)
+					
+			}, completion: { _ in
+				
+				tmpLabelView.font = UIFont.systemFont(ofSize: 14.0)
+				tmpLabelView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				tmpLabelView.sizeToFit()
+				
+				(toViewController as! ViewController).selectedImageView.alpha = 1.0
+				(toViewController as! ViewController).selectedLabel.alpha = 1.0
+				
+				transitionContext.completeTransition(true)
+			})
+			
 		}
 		
 

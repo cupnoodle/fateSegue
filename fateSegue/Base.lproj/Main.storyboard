@@ -78,13 +78,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Servant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS6-9E-hY2">
+                                <rect key="frame" x="60" y="407" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NS6-9E-hY2" firstAttribute="trailing" secondItem="fLP-ZY-0vf" secondAttribute="trailing" id="0Pu-Ko-HaX"/>
                             <constraint firstItem="fLP-ZY-0vf" firstAttribute="top" secondItem="gzv-my-imY" secondAttribute="bottom" constant="40" id="Bok-AV-BK5"/>
+                            <constraint firstItem="NS6-9E-hY2" firstAttribute="top" secondItem="u2p-70-ZvO" secondAttribute="bottom" constant="35" id="Klz-Tx-MmY"/>
                             <constraint firstItem="u2p-70-ZvO" firstAttribute="centerX" secondItem="ZC4-G6-bWl" secondAttribute="centerX" id="Nng-qp-hku"/>
                             <constraint firstItem="u2p-70-ZvO" firstAttribute="top" secondItem="gzv-my-imY" secondAttribute="bottom" constant="330" id="ce6-bf-0Pc"/>
                             <constraint firstItem="fLP-ZY-0vf" firstAttribute="centerX" secondItem="ZC4-G6-bWl" secondAttribute="centerX" id="gbc-EG-QB0"/>
+                            <constraint firstItem="NS6-9E-hY2" firstAttribute="leading" secondItem="fLP-ZY-0vf" secondAttribute="leading" id="hlI-zD-kJd"/>
                         </constraints>
                     </view>
                     <connections>

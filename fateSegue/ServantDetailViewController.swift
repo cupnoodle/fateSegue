@@ -19,6 +19,10 @@ class ServantDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		
+		let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(servantImageTapped(_:)) )
+		self.servantImage.isUserInteractionEnabled = true
+		self.servantImage.addGestureRecognizer(imageTapRecognizer)
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -44,4 +48,10 @@ class ServantDetailViewController: UIViewController {
     }
     */
 
+	func servantImageTapped(_ tapGesture: UITapGestureRecognizer){
+		print("servant image tapped")
+		self.servantLabel.alpha = 0.0
+		self.servantImage.alpha = 0.0
+		presentingViewController?.dismiss(animated: true, completion: nil)
+	}
 }

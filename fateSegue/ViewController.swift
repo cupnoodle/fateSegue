@@ -85,6 +85,23 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 	}
 	
 	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		return nil
+		transition.presenting = false
+		
+		transition.originImageFrame = (dismissed as! ServantDetailViewController).servantImage.frame
+		transition.endImageFrame = selectedImageFrame
+		transition.image = selectedImage
+		
+		transition.originLabelFrame = (dismissed as! ServantDetailViewController).servantLabel.frame
+		transition.endLabelFrame = selectedLabelFrame
+		transition.label = selectedLabel
+		
+		selectedImageView.alpha = 0.0
+		selectedLabel.alpha = 0.0
+		
+		print("dismissing lel")
+		
+		return transition
 	}
+	
+	
 }
