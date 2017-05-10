@@ -61,9 +61,11 @@ class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 			tmpLabelView.sizeToFit()
 			
 			fromView.alpha = 1.0
-			
+
 			UIView.animate(
 				withDuration: duration,
+				delay: 0.0,
+				options: .curveEaseInOut,
 				animations: {
 					fromView.alpha = 0.0
 					tmpImageView.frame = self.endImageFrame
@@ -117,6 +119,8 @@ class TranslationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 			
 			UIView.animate(
 				withDuration: duration,
+				delay: 0.0,
+				options: .curveEaseInOut,
 				animations: {
 					toView.alpha = 1.0
 					fromView.alpha = 0.0
